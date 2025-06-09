@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decompression Games - Relaxing Online Gaming Experience</title>
+    <meta name="description" content="Play Decompression Games online for free. Experience calming gameplay designed to help you unwind and destress. No downloads required - play instantly in your browser.">
+    <meta name="keywords" content="decompression games, relaxing games, stress relief games, online games, browser games, free games">
+    <meta name="author" content="Decompression Games">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Decompression Games - Relaxing Online Gaming Experience">
+    <meta property="og:description" content="Experience calming gameplay designed to help you unwind and destress. Play instantly in your browser.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://decompressiongames.online/">
+    <meta property="og:image" content="https://decompressiongames.online/images/og-image.jpg">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Decompression Games">
+    <meta name="twitter:description" content="Relaxing online games to help you unwind">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://decompressiongames.online/">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <style>
+        /* Astroneer-inspired color palette */
+        :root {
+            --astroneer-blue: #00A8E8;
+            --astroneer-purple: #7B2CBF;
+            --astroneer-pink: #E94B7E;
+            --astroneer-orange: #FF6B35;
+            --astroneer-yellow: #FFD23F;
+            --astroneer-dark: #1A1A2E;
+            --astroneer-light: #F0F3F7;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);
+            min-height: 100vh;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, var(--astroneer-blue), var(--astroneer-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .planet-bg {
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(233, 75, 126, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 168, 232, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(123, 44, 191, 0.05) 0%, transparent 50%);
+        }
+        
+        .game-container {
+            box-shadow: 0 25px 50px -12px rgba(0, 168, 232, 0.25);
+        }
+        
+        .feature-card {
+            background: rgba(240, 243, 247, 0.05);
+            border: 1px solid rgba(240, 243, 247, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(0, 168, 232, 0.3);
+            border-color: rgba(0, 168, 232, 0.3);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="text-gray-100">
+    <div class="planet-bg min-h-screen">
+        <!-- Header Section -->
+        <header class="container mx-auto px-4 py-8">
+            <nav class="flex justify-between items-center">
+                <div class="text-2xl font-bold gradient-text">Decompression Games</div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#game" class="hover:text-blue-400 transition">Play Now</a>
+                    <a href="#features" class="hover:text-blue-400 transition">Features</a>
+                    <a href="#about" class="hover:text-blue-400 transition">About</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="container mx-auto px-4 py-12 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 gradient-text floating">
+                Decompression Games
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Escape into a world of calm - where gameplay meets mindfulness for the ultimate stress relief experience
+            </p>
+            <a href="#game" class="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition duration-300">
+                Play Now - It's Free!
+            </a>
+        </section>
+
+        <!-- Game Section -->
+        <section id="game" class="container mx-auto px-4 py-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 gradient-text">
+                Play Decompression Games Online
+            </h2>
+            <div class="game-container max-w-6xl mx-auto rounded-2xl overflow-hidden bg-gray-900 p-2">
+                <iframe 
+                    src="https://cloud.onlinegames.io/games/2025/unity/decompressiongames/index-og.html"
+                    width="100%"
+                    height="600"
+                    frameborder="0"
+                    allowfullscreen
+                    class="w-full rounded-xl"
+                    title="Decompression Games - Play Online"
+                >
+                </iframe>
+            </div>
+            <p class="text-center mt-6 text-gray-400">
+                <span class="inline-flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 1.414L10.586 9.5H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                    Use arrow keys or WASD to navigate
+                </span>
+            </p>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="container mx-auto px-4 py-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">
+                Game Features
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="feature-card rounded-xl p-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16s1-1 4-1 5 3 8 3 4-1 4-1V3s-1 1-4 1-5-3-8-3-4 1-4 1z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-blue-300">Calming Gameplay</h3>
+                    <p class="text-gray-400">Designed with relaxation in mind, featuring soothing visuals and peaceful mechanics</p>
+                </div>
+                
+                <div class="feature-card rounded-xl p-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-purple-300">No Time Pressure</h3>
+                    <p class="text-gray-400">Play at your own pace without timers or stress-inducing elements</p>
+                </div>
+                
+                <div class="feature-card rounded-xl p-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-pink-300">Mindful Design</h3>
+                    <p class="text-gray-400">Every element crafted to promote mental wellness and stress relief</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="container mx-auto px-4 py-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 gradient-text">
+                About Decompression Games
+            </h2>
+            <div class="max-w-4xl mx-auto bg-gray-900 bg-opacity-50 rounded-2xl p-8 md:p-12">
+                <p class="text-lg leading-relaxed mb-6 text-gray-300">
+                    Decompression Games represents a new approach to online gaming, where the primary goal isn't high scores or competition, but rather mental wellness and relaxation. In our fast-paced world, we believe gaming can be a powerful tool for stress relief and mindfulness.
+                </p>
+                <p class="text-lg leading-relaxed mb-6 text-gray-300">
+                    Our carefully crafted gameplay mechanics are designed to induce a state of flow, helping players disconnect from daily stressors and find moments of peace. With beautiful visuals inspired by serene landscapes and calming color palettes, each session becomes a mini meditation.
+                </p>
+                <p class="text-lg leading-relaxed text-gray-300">
+                    Whether you're taking a quick break from work, winding down before bed, or simply seeking a moment of tranquility, Decompression Games offers an accessible escape that's just a click away. No downloads, no installations - just pure, peaceful gaming whenever you need it.
+                </p>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="container mx-auto px-4 py-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">
+                Benefits of Playing
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2 text-orange-300">Stress Reduction</h3>
+                        <p class="text-gray-400">Scientifically designed gameplay patterns that help lower cortisol levels</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2 text-yellow-300">Improved Focus</h3>
+                        <p class="text-gray-400">Regular play sessions can enhance concentration and mental clarity</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2 text-green-300">Better Sleep</h3>
+                        <p class="text-gray-400">Evening sessions help transition your mind to a restful state</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2 text-indigo-300">Mood Enhancement</h3>
+                        <p class="text-gray-400">Positive gameplay experiences that boost serotonin naturally</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="container mx-auto px-4 py-16 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 gradient-text">
+                Ready to Decompress?
+            </h2>
+            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Join thousands of players who've discovered the perfect balance between gaming and wellness
+            </p>
+            <a href="#game" class="inline-block px-8 py-4 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition duration-300">
+                Start Playing Now
+            </a>
+        </section>
+
+        <!-- Footer -->
+        <footer class="container mx-auto px-4 py-8 border-t border-gray-800">
+            <div class="text-center text-gray-400">
+                <p>&copy; 2025 Decompression Games. All rights reserved.</p>
+                <p class="mt-2">Play free online at <a href="https://decompressiongames.online" class="text-blue-400 hover:text-blue-300">decompressiongames.online</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "Decompression Games",
+        "description": "Relaxing online games designed to help you unwind and destress",
+        "url": "https://decompressiongames.online",
+        "gamePlatform": "Web Browser",
+        "genre": "Casual",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Decompression Games"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+</body>
+</html>
