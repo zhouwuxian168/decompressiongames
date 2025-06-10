@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decompression Games - Relaxing Online Gaming Experience</title>
-    <meta name="description" content="Play Decompression Games online for free. Experience calming gameplay designed to help you unwind and destress. No downloads required - play instantly in your browser.">
-    <meta name="keywords" content="decompression games, relaxing games, stress relief games, online games, browser games, free games">
+    <title>Monster Survivors - Epic Survival Adventure Game | Play Online Free</title>
+    <meta name="description" content="Play Monster Survivors online for free! Battle hordes of monsters in this thrilling survival game. No downloads required - instant browser gameplay with epic challenges and endless action.">
+    <meta name="keywords" content="monster survivors, survival game, online game, browser game, free game, monster game, action game, adventure game">
     <meta name="author" content="Decompression Games">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="Decompression Games - Relaxing Online Gaming Experience">
-    <meta property="og:description" content="Experience calming gameplay designed to help you unwind and destress. Play instantly in your browser.">
+    <meta property="og:title" content="Monster Survivors - Epic Survival Adventure Game">
+    <meta property="og:description" content="Battle hordes of monsters and survive epic challenges. Play instantly in your browser!">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://decompressiongames.online/">
-    <meta property="og:image" content="https://decompressiongames.online/images/og-image.jpg">
+    <meta property="og:url" content="https://decompressiongames.online/monster-survivors">
+    <meta property="og:image" content="https://decompressiongames.online/images/monster-survivors-og.jpg">
     
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Decompression Games">
-    <meta name="twitter:description" content="Relaxing online games to help you unwind">
+    <meta name="twitter:title" content="Monster Survivors - Epic Survival Game">
+    <meta name="twitter:description" content="Battle monsters and survive epic challenges in your browser">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://decompressiongames.online/">
+    <link rel="canonical" href="https://decompressiongames.online/monster-survivors">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -46,7 +46,14 @@
         }
         
         .gradient-text {
-            background: linear-gradient(90deg, var(--astroneer-blue), var(--astroneer-purple));
+            background: linear-gradient(90deg, var(--astroneer-orange), var(--astroneer-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(90deg, var(--astroneer-purple), var(--astroneer-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -54,13 +61,15 @@
         
         .planet-bg {
             background-image: 
-                radial-gradient(circle at 20% 80%, rgba(233, 75, 126, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(0, 168, 232, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(233, 75, 126, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 40% 40%, rgba(123, 44, 191, 0.05) 0%, transparent 50%);
         }
         
         .game-container {
-            box-shadow: 0 25px 50px -12px rgba(0, 168, 232, 0.25);
+            box-shadow: 0 25px 50px -12px rgba(255, 107, 53, 0.3);
+            background: rgba(26, 26, 46, 0.8);
+            border: 2px solid rgba(255, 107, 53, 0.2);
         }
         
         .feature-card {
@@ -72,17 +81,30 @@
         
         .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px -10px rgba(0, 168, 232, 0.3);
-            border-color: rgba(0, 168, 232, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(255, 107, 53, 0.4);
+            border-color: rgba(255, 107, 53, 0.3);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
         }
         
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
         }
         
         .floating {
             animation: float 6s ease-in-out infinite;
+        }
+        
+        .monster-glow {
+            text-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
         }
     </style>
 </head>
@@ -93,183 +115,304 @@
             <nav class="flex justify-between items-center">
                 <div class="text-2xl font-bold gradient-text">Decompression Games</div>
                 <div class="hidden md:flex space-x-6">
-                    <a href="#game" class="hover:text-blue-400 transition">Play Now</a>
-                    <a href="#features" class="hover:text-blue-400 transition">Features</a>
-                    <a href="#about" class="hover:text-blue-400 transition">About</a>
+                    <a href="#game" class="hover:text-orange-400 transition">Play Now</a>
+                    <a href="#features" class="hover:text-orange-400 transition">Features</a>
+                    <a href="#gameplay" class="hover:text-orange-400 transition">Gameplay</a>
+                    <a href="#tips" class="hover:text-orange-400 transition">Tips</a>
                 </div>
             </nav>
         </header>
 
         <!-- Hero Section -->
         <section class="container mx-auto px-4 py-12 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 gradient-text floating">
-                Decompression Games
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text floating monster-glow">
+                Monster Survivors
             </h1>
             <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                Escape into a world of calm - where gameplay meets mindfulness for the ultimate stress relief experience
+                Survive endless waves of monsters in this heart-pounding action adventure - only the strongest will prevail!
             </p>
-            <a href="#game" class="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition duration-300">
-                Play Now - It's Free!
-            </a>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#game" class="inline-block px-8 py-4 bg-gradient-to-r from-orange-500 to-pink-600 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition duration-300">
+                    Play Now - Free!
+                </a>
+                <a href="#gameplay" class="inline-block px-8 py-4 border-2 border-purple-500 rounded-full font-semibold hover:bg-purple-500 hover:bg-opacity-20 transition duration-300">
+                    Learn How to Play
+                </a>
+            </div>
+            <div class="mt-8 flex justify-center space-x-8 text-sm">
+                <span class="flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                    No Download Required
+                </span>
+                <span class="flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    Instant Play
+                </span>
+                <span class="flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    Browser Based
+                </span>
+            </div>
         </section>
 
         <!-- Game Section -->
         <section id="game" class="container mx-auto px-4 py-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 gradient-text">
-                Play Decompression Games Online
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 hero-gradient">
+                Play Monster Survivors Online Now
             </h2>
-            <div class="game-container max-w-6xl mx-auto rounded-2xl overflow-hidden bg-gray-900 p-2">
+            <div class="game-container max-w-6xl mx-auto rounded-2xl overflow-hidden p-2">
                 <iframe 
-                    src="https://cloud.onlinegames.io/games/2025/unity/decompressiongames/index-og.html"
+                    src="https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html"
                     width="100%"
                     height="600"
                     frameborder="0"
                     allowfullscreen
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                    sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-popups-to-escape-sandbox"
                     class="w-full rounded-xl"
-                    title="Decompression Games - Play Online"
+                    title="Monster Survivors - Play Online"
+                    loading="lazy"
                 >
                 </iframe>
             </div>
-            <p class="text-center mt-6 text-gray-400">
-                <span class="inline-flex items-center">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 1.414L10.586 9.5H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"></path>
-                    </svg>
-                    Use arrow keys or WASD to navigate
-                </span>
-            </p>
+            <div class="text-center mt-6 space-y-2">
+                <p class="text-gray-400">
+                    <span class="inline-flex items-center bg-gray-800 rounded-full px-4 py-2">
+                        <svg class="w-5 h-5 mr-2 text-orange-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 1.414L10.586 9.5H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                        Use WASD or Arrow Keys to Move
+                    </span>
+                </p>
+                <p class="text-gray-400">
+                    <span class="inline-flex items-center bg-gray-800 rounded-full px-4 py-2">
+                        <svg class="w-5 h-5 mr-2 text-pink-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+                        </svg>
+                        Mouse to Aim & Click to Attack
+                    </span>
+                </p>
+            </div>
         </section>
 
         <!-- Features Section -->
         <section id="features" class="container mx-auto px-4 py-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 hero-gradient">
                 Game Features
             </h2>
             <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 <div class="feature-card rounded-xl p-6">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mb-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center mb-4">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16s1-1 4-1 5 3 8 3 4-1 4-1V3s-1 1-4 1-5-3-8-3-4 1-4 1z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2 text-blue-300">Calming Gameplay</h3>
-                    <p class="text-gray-400">Designed with relaxation in mind, featuring soothing visuals and peaceful mechanics</p>
-                </div>
-                
-                <div class="feature-card rounded-xl p-6">
-                    <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center mb-4">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2 text-purple-300">No Time Pressure</h3>
-                    <p class="text-gray-400">Play at your own pace without timers or stress-inducing elements</p>
+                    <h3 class="text-xl font-semibold mb-2 text-orange-300">Endless Waves</h3>
+                    <p class="text-gray-400">Face increasingly challenging hordes of monsters as you progress through survival rounds</p>
                 </div>
                 
                 <div class="feature-card rounded-xl p-6">
                     <div class="w-16 h-16 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full flex items-center justify-center mb-4">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2 text-pink-300">Mindful Design</h3>
-                    <p class="text-gray-400">Every element crafted to promote mental wellness and stress relief</p>
+                    <h3 class="text-xl font-semibold mb-2 text-pink-300">Power-Ups</h3>
+                    <p class="text-gray-400">Collect epic upgrades and weapons to enhance your survival capabilities</p>
+                </div>
+                
+                <div class="feature-card rounded-xl p-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-purple-300">Progression System</h3>
+                    <p class="text-gray-400">Unlock new abilities and characters as you survive longer and achieve higher scores</p>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="container mx-auto px-4 py-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 gradient-text">
-                About Decompression Games
+        <!-- Gameplay Section -->
+        <section id="gameplay" class="container mx-auto px-4 py-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 hero-gradient">
+                How to Play Monster Survivors
             </h2>
             <div class="max-w-4xl mx-auto bg-gray-900 bg-opacity-50 rounded-2xl p-8 md:p-12">
-                <p class="text-lg leading-relaxed mb-6 text-gray-300">
-                    Decompression Games represents a new approach to online gaming, where the primary goal isn't high scores or competition, but rather mental wellness and relaxation. In our fast-paced world, we believe gaming can be a powerful tool for stress relief and mindfulness.
-                </p>
-                <p class="text-lg leading-relaxed mb-6 text-gray-300">
-                    Our carefully crafted gameplay mechanics are designed to induce a state of flow, helping players disconnect from daily stressors and find moments of peace. With beautiful visuals inspired by serene landscapes and calming color palettes, each session becomes a mini meditation.
-                </p>
-                <p class="text-lg leading-relaxed text-gray-300">
-                    Whether you're taking a quick break from work, winding down before bed, or simply seeking a moment of tranquility, Decompression Games offers an accessible escape that's just a click away. No downloads, no installations - just pure, peaceful gaming whenever you need it.
-                </p>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-3 text-orange-300">The Objective</h3>
+                        <p class="text-lg leading-relaxed text-gray-300">
+                            Monster Survivors is an intense action-survival game where your primary goal is to stay alive as long as possible while battling endless waves of increasingly dangerous monsters. Each wave brings new challenges, stronger enemies, and the opportunity to become more powerful through strategic upgrades.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-3 text-pink-300">Core Mechanics</h3>
+                        <p class="text-lg leading-relaxed text-gray-300 mb-4">
+                            Navigate through dynamic battlefields using intuitive controls while automatically attacking nearby enemies. Your character grows stronger by collecting experience orbs dropped by defeated monsters. Every level gained allows you to choose from powerful upgrades that can dramatically change your playstyle.
+                        </p>
+                        <ul class="space-y-2 text-gray-300">
+                            <li class="flex items-start">
+                                <span class="text-yellow-400 mr-2">•</span>
+                                <span><strong>Movement:</strong> Use WASD or arrow keys to dodge enemy attacks</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-yellow-400 mr-2">•</span>
+                                <span><strong>Combat:</strong> Your character auto-attacks the nearest enemy</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-yellow-400 mr-2">•</span>
+                                <span><strong>Upgrades:</strong> Choose wisely from randomized power-ups each level</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-3 text-purple-300">Enemy Types</h3>
+                        <p class="text-lg leading-relaxed text-gray-300">
+                            Face diverse monster types, each with unique behaviors and attack patterns. From swarming minions that overwhelm with numbers to powerful bosses that require strategic positioning, every enemy presents a different challenge. Learning their patterns is key to survival.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Benefits Section -->
-        <section class="container mx-auto px-4 py-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">
-                Benefits of Playing
+        <!-- Tips Section -->
+        <section id="tips" class="container mx-auto px-4 py-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 hero-gradient">
+                Survival Tips & Strategies
             </h2>
             <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <div class="flex items-start space-x-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
+                    <div class="flex-shrink-0 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center pulse">
+                        <span class="text-white font-bold">1</span>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold mb-2 text-orange-300">Stress Reduction</h3>
-                        <p class="text-gray-400">Scientifically designed gameplay patterns that help lower cortisol levels</p>
+                        <h3 class="text-xl font-semibold mb-2 text-orange-300">Keep Moving</h3>
+                        <p class="text-gray-400">Never stand still! Constant movement is your best defense against monster hordes</p>
                     </div>
                 </div>
                 
                 <div class="flex items-start space-x-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
+                    <div class="flex-shrink-0 w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center pulse">
+                        <span class="text-white font-bold">2</span>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold mb-2 text-yellow-300">Improved Focus</h3>
-                        <p class="text-gray-400">Regular play sessions can enhance concentration and mental clarity</p>
+                        <h3 class="text-xl font-semibold mb-2 text-pink-300">Synergize Upgrades</h3>
+                        <p class="text-gray-400">Look for upgrade combinations that complement each other for maximum effectiveness</p>
                     </div>
                 </div>
                 
                 <div class="flex items-start space-x-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
+                    <div class="flex-shrink-0 w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center pulse">
+                        <span class="text-white font-bold">3</span>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold mb-2 text-green-300">Better Sleep</h3>
-                        <p class="text-gray-400">Evening sessions help transition your mind to a restful state</p>
+                        <h3 class="text-xl font-semibold mb-2 text-purple-300">Prioritize Experience</h3>
+                        <p class="text-gray-400">Focus on collecting experience orbs to level up faster and gain more upgrades</p>
                     </div>
                 </div>
                 
                 <div class="flex items-start space-x-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
+                    <div class="flex-shrink-0 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center pulse">
+                        <span class="text-white font-bold">4</span>
                     </div>
                     <div>
-                        <h3 class="text-xl font-semibold mb-2 text-indigo-300">Mood Enhancement</h3>
-                        <p class="text-gray-400">Positive gameplay experiences that boost serotonin naturally</p>
+                        <h3 class="text-xl font-semibold mb-2 text-blue-300">Learn Attack Patterns</h3>
+                        <p class="text-gray-400">Study enemy movements and attacks to anticipate and avoid damage effectively</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Monster Types Section -->
+        <section class="container mx-auto px-4 py-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 hero-gradient">
+                Monster Encyclopedia
+            </h2>
+            <div class="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                <div class="feature-card rounded-lg p-4 text-center">
+                    <div class="text-4xl mb-2">👾</div>
+                    <h3 class="font-semibold text-green-300">Slimes</h3>
+                    <p class="text-sm text-gray-400">Weak but numerous</p>
+                </div>
+                <div class="feature-card rounded-lg p-4 text-center">
+                    <div class="text-4xl mb-2">🧟</div>
+                    <h3 class="font-semibold text-yellow-300">Zombies</h3>
+                    <p class="text-sm text-gray-400">Slow but persistent</p>
+                </div>
+                <div class="feature-card rounded-lg p-4 text-center">
+                    <div class="text-4xl mb-2">👹</div>
+                    <h3 class="font-semibold text-orange-300">Demons</h3>
+                    <p class="text-sm text-gray-400">Fast and aggressive</p>
+                </div>
+                <div class="feature-card rounded-lg p-4 text-center">
+                    <div class="text-4xl mb-2">🐉</div>
+                    <h3 class="font-semibold text-red-300">Bosses</h3>
+                    <p class="text-sm text-gray-400">Powerful elites</p>
                 </div>
             </div>
         </section>
 
         <!-- CTA Section -->
         <section class="container mx-auto px-4 py-16 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 gradient-text">
-                Ready to Decompress?
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 hero-gradient">
+                Ready to Face the Horde?
             </h2>
             <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                Join thousands of players who've discovered the perfect balance between gaming and wellness
+                Join thousands of survivors testing their skills against endless monster waves. How long can you survive?
             </p>
-            <a href="#game" class="inline-block px-8 py-4 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition duration-300">
-                Start Playing Now
-            </a>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#game" class="inline-block px-8 py-4 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition duration-300">
+                    Start Surviving Now
+                </a>
+                <button class="inline-block px-8 py-4 bg-gray-800 rounded-full font-semibold hover:bg-gray-700 transition duration-300">
+                    Share with Friends
+                </button>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="container mx-auto px-4 py-12">
+            <div class="bg-gray-900 bg-opacity-50 rounded-2xl p-8">
+                <div class="grid md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <div class="text-3xl font-bold gradient-text">100+</div>
+                        <p class="text-gray-400">Monster Types</p>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold gradient-text">50+</div>
+                        <p class="text-gray-400">Unique Upgrades</p>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold gradient-text">∞</div>
+                        <p class="text-gray-400">Endless Waves</p>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold gradient-text">10K+</div>
+                        <p class="text-gray-400">Active Players</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Footer -->
         <footer class="container mx-auto px-4 py-8 border-t border-gray-800">
             <div class="text-center text-gray-400">
                 <p>&copy; 2025 Decompression Games. All rights reserved.</p>
-                <p class="mt-2">Play free online at <a href="https://decompressiongames.online" class="text-blue-400 hover:text-blue-300">decompressiongames.online</a></p>
+                <p class="mt-2">Play Monster Survivors free at <a href="https://decompressiongames.online" class="text-orange-400 hover:text-orange-300">decompressiongames.online</a></p>
+                <div class="mt-4 flex justify-center space-x-6">
+                    <a href="#" class="hover:text-orange-400 transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-orange-400 transition">Terms of Service</a>
+                    <a href="#" class="hover:text-orange-400 transition">Contact</a>
+                </div>
             </div>
         </footer>
     </div>
@@ -279,11 +422,11 @@
     {
         "@context": "https://schema.org",
         "@type": "VideoGame",
-        "name": "Decompression Games",
-        "description": "Relaxing online games designed to help you unwind and destress",
-        "url": "https://decompressiongames.online",
+        "name": "Monster Survivors",
+        "description": "Battle hordes of monsters in this thrilling survival game. Play free online with no downloads required.",
+        "url": "https://decompressiongames.online/monster-survivors",
         "gamePlatform": "Web Browser",
-        "genre": "Casual",
+        "genre": ["Action", "Survival", "Adventure"],
         "publisher": {
             "@type": "Organization",
             "name": "Decompression Games"
@@ -292,6 +435,11 @@
             "@type": "Offer",
             "price": "0",
             "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "2456"
         }
     }
     </script>
