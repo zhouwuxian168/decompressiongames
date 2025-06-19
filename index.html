@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decompression Games - Play Free Online Games</title>
-    <meta name="description" content="Play hundreds of free online games including Monster Survivors, Puzzle Quest, Space Racer and more. No downloads required!">
-    <meta name="keywords" content="free online games, browser games, action games, puzzle games, strategy games, multiplayer games">
-    <meta name="author" content="Decompression Games">
-    <!-- Open Graph/Twitter tags and other meta data -->
+    <title>GameHub - Play Free Online Games</title>
+    <meta name="description" content="Play hundreds of free online games directly in your browser. No downloads required!">
+    <meta name="keywords" content="free online games, browser games, action games, puzzle games, strategy games">
+    <meta name="author" content="GameHub">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
     <style>
         :root {
             --primary: #00A8E8;
@@ -23,6 +28,7 @@
             background: linear-gradient(135deg, var(--dark) 0%, #16213E 100%);
             min-height: 100vh;
             color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         .gradient-text {
@@ -107,6 +113,12 @@
             transform: translateY(0);
         }
         
+        .game-container {
+            box-shadow: 0 25px 50px -12px rgba(255, 107, 53, 0.3);
+            background: rgba(26, 26, 46, 0.8);
+            border: 2px solid rgba(255, 107, 53, 0.2);
+        }
+        
         .search-container {
             position: relative;
         }
@@ -122,23 +134,28 @@
             max-height: 300px;
             overflow-y: auto;
             display: none;
+            z-index: 100;
         }
         
         .search-container:focus-within .search-results {
             display: block;
         }
         
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-        
-        .pulse {
-            animation: pulse 2s ease-in-out infinite;
-        }
-        
         .rating-stars {
             color: #FFD23F;
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+        
+        .monster-glow {
+            text-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
         }
     </style>
 </head>
@@ -147,24 +164,24 @@
     <header class="sticky top-0 z-50 bg-gray-900 bg-opacity-90 backdrop-blur-sm border-b border-gray-800">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-3">
-                <div class="text-2xl font-bold gradient-text">Decompression Games</div>
+                <div class="text-2xl font-bold gradient-text">GameHub</div>
                 <div class="hidden md:flex space-x-6 ml-6">
-                    <a href="index.html" class="nav-link active-nav">Home</a>
+                    <a href="#" class="nav-link active-nav">Home</a>
                     <div class="dropdown relative">
                         <a href="#" class="nav-link flex items-center">
                             Categories <i class="ml-1 fas fa-chevron-down text-xs"></i>
                         </a>
                         <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-lg py-2 z-20">
-                            <a href="action.html" class="block px-4 py-2 hover:bg-gray-700">Action Games</a>
-                            <a href="puzzle.html" class="block px-4 py-2 hover:bg-gray-700">Puzzle Games</a>
-                            <a href="strategy.html" class="block px-4 py-2 hover:bg-gray-700">Strategy Games</a>
-                            <a href="sports.html" class="block px-4 py-2 hover:bg-gray-700">Sports Games</a>
-                            <a href="multiplayer.html" class="block px-4 py-2 hover:bg-gray-700">Multiplayer Games</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-700">Action Games</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-700">Puzzle Games</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-700">Strategy Games</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-700">Sports Games</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-700">Multiplayer Games</a>
                         </div>
                     </div>
-                    <a href="new.html" class="nav-link">New Games</a>
-                    <a href="popular.html" class="nav-link">Popular</a>
-                    <a href="about.html" class="nav-link">About</a>
+                    <a href="#" class="nav-link">New Games</a>
+                    <a href="#" class="nav-link">Popular</a>
+                    <a href="#" class="nav-link">About</a>
                 </div>
             </div>
             
@@ -175,27 +192,27 @@
                         <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
                     </div>
                     <div class="search-results">
-                        <a href="monster-survivors.html" class="block p-3 hover:bg-gray-700">
+                        <a href="#monster-survivors" class="block p-3 hover:bg-gray-700">
                             <div class="flex items-center space-x-3">
-                                <img src="https://via.placeholder.com/50x50/1A1A2E/00A8E8?text=MS" alt="Monster Survivors" class="w-10 h-10 rounded">
+                                <img src="https://cdn.onlinegames.io/games/monster-survivors/thumb.jpg" alt="Monster Survivors" class="w-10 h-10 rounded">
                                 <div>
                                     <div class="font-medium">Monster Survivors</div>
                                     <div class="text-xs text-gray-400">Action, Survival</div>
                                 </div>
                             </div>
                         </a>
-                        <a href="puzzle-quest.html" class="block p-3 hover:bg-gray-700">
+                        <a href="#puzzle-quest" class="block p-3 hover:bg-gray-700">
                             <div class="flex items-center space-x-3">
-                                <img src="https://via.placeholder.com/50x50/1A1A2E/7B2CBF?text=PQ" alt="Puzzle Quest" class="w-10 h-10 rounded">
+                                <img src="https://cdn.onlinegames.io/games/puzzle-quest/thumb.jpg" alt="Puzzle Quest" class="w-10 h-10 rounded">
                                 <div>
                                     <div class="font-medium">Puzzle Quest</div>
                                     <div class="text-xs text-gray-400">Puzzle, Adventure</div>
                                 </div>
                             </div>
                         </a>
-                        <a href="space-racer.html" class="block p-3 hover:bg-gray-700">
+                        <a href="#space-racer" class="block p-3 hover:bg-gray-700">
                             <div class="flex items-center space-x-3">
-                                <img src="https://via.placeholder.com/50x50/1A1A2E/FF6B35?text=SR" alt="Space Racer" class="w-10 h-10 rounded">
+                                <img src="https://cdn.onlinegames.io/games/space-racer/thumb.jpg" alt="Space Racer" class="w-10 h-10 rounded">
                                 <div>
                                     <div class="font-medium">Space Racer</div>
                                     <div class="text-xs text-gray-400">Racing, Sci-Fi</div>
@@ -222,17 +239,17 @@
     <!-- Hero Section -->
     <section class="relative py-16 md:py-24 bg-gradient-to-br from-indigo-900/30 to-purple-900/30">
         <div class="container mx-auto px-4 text-center relative z-10">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 hero-gradient">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 hero-gradient floating">
                 Play Free Online Games
             </h1>
             <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto">
-                Discover hundreds of free games in every genre. No downloads required - play instantly in your browser!
+                Play hundreds of free games directly in your browser. No downloads required - instant gameplay!
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#games" class="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <a href="#featured-games" class="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition duration-300">
                     Browse All Games
                 </a>
-                <a href="popular.html" class="inline-block px-8 py-4 border-2 border-purple-500 rounded-full font-semibold hover:bg-purple-500 hover:bg-opacity-20 transition duration-300">
+                <a href="#popular-games" class="inline-block px-8 py-4 border-2 border-purple-500 rounded-full font-semibold hover:bg-purple-500 hover:bg-opacity-20 transition duration-300">
                     See Popular Games
                 </a>
             </div>
@@ -248,7 +265,7 @@
                 Game Categories
             </h2>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                <a href="action.html" class="category-card rounded-xl overflow-hidden">
+                <a href="#" class="category-card rounded-xl overflow-hidden">
                     <div class="p-6 text-center">
                         <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 rounded-full flex items-center justify-center mb-4 mx-auto">
                             <i class="fas fa-fist-raised text-2xl"></i>
@@ -258,7 +275,7 @@
                     </div>
                 </a>
                 
-                <a href="puzzle.html" class="category-card rounded-xl overflow-hidden">
+                <a href="#" class="category-card rounded-xl overflow-hidden">
                     <div class="p-6 text-center">
                         <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center mb-4 mx-auto">
                             <i class="fas fa-puzzle-piece text-2xl"></i>
@@ -268,7 +285,7 @@
                     </div>
                 </a>
                 
-                <a href="strategy.html" class="category-card rounded-xl overflow-hidden">
+                <a href="#" class="category-card rounded-xl overflow-hidden">
                     <div class="p-6 text-center">
                         <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center mb-4 mx-auto">
                             <i class="fas fa-chess text-2xl"></i>
@@ -278,7 +295,7 @@
                     </div>
                 </a>
                 
-                <a href="sports.html" class="category-card rounded-xl overflow-hidden">
+                <a href="#" class="category-card rounded-xl overflow-hidden">
                     <div class="p-6 text-center">
                         <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-full flex items-center justify-center mb-4 mx-auto">
                             <i class="fas fa-baseball-ball text-2xl"></i>
@@ -288,7 +305,7 @@
                     </div>
                 </a>
                 
-                <a href="multiplayer.html" class="category-card rounded-xl overflow-hidden">
+                <a href="#" class="category-card rounded-xl overflow-hidden">
                     <div class="p-6 text-center">
                         <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center mb-4 mx-auto">
                             <i class="fas fa-users text-2xl"></i>
@@ -302,20 +319,20 @@
     </section>
 
     <!-- Featured Games Section -->
-    <section id="games" class="py-16 bg-gray-900/50">
+    <section id="featured-games" class="py-16 bg-gray-900/50">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center mb-10">
                 <h2 class="text-3xl md:text-4xl font-bold hero-gradient">Featured Games</h2>
-                <a href="all-games.html" class="text-blue-400 hover:text-blue-300 flex items-center">
+                <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
                     View All Games <i class="ml-2 fas fa-arrow-right"></i>
                 </a>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Monster Survivors -->
-                <a href="monster-survivors.html" class="game-card rounded-xl overflow-hidden">
+                <a href="#monster-survivors" class="game-card rounded-xl overflow-hidden">
                     <div class="relative">
-                        <img src="https://via.placeholder.com/400x225/1A1A2E/FF6B35?text=Monster+Survivors" alt="Monster Survivors" class="game-thumbnail w-full">
+                        <img src="https://cdn.onlinegames.io/games/monster-survivors/thumb.jpg" alt="Monster Survivors" class="game-thumbnail w-full">
                         <div class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
                             New
                         </div>
@@ -337,8 +354,8 @@
                 </a>
                 
                 <!-- Puzzle Quest -->
-                <a href="puzzle-quest.html" class="game-card rounded-xl overflow-hidden">
-                    <img src="https://via.placeholder.com/400x225/1A1A2E/7B2CBF?text=Puzzle+Quest" alt="Puzzle Quest" class="game-thumbnail w-full">
+                <a href="#puzzle-quest" class="game-card rounded-xl overflow-hidden">
+                    <img src="https://cdn.onlinegames.io/games/puzzle-quest/thumb.jpg" alt="Puzzle Quest" class="game-thumbnail w-full">
                     <div class="p-4">
                         <div class="flex justify-between items-start">
                             <h3 class="text-xl font-bold">Puzzle Quest</h3>
@@ -356,8 +373,8 @@
                 </a>
                 
                 <!-- Space Racer -->
-                <a href="space-racer.html" class="game-card rounded-xl overflow-hidden">
-                    <img src="https://via.placeholder.com/400x225/1A1A2E/00A8E8?text=Space+Racer" alt="Space Racer" class="game-thumbnail w-full">
+                <a href="#space-racer" class="game-card rounded-xl overflow-hidden">
+                    <img src="https://cdn.onlinegames.io/games/space-racer/thumb.jpg" alt="Space Racer" class="game-thumbnail w-full">
                     <div class="p-4">
                         <div class="flex justify-between items-start">
                             <h3 class="text-xl font-bold">Space Racer</h3>
@@ -375,9 +392,9 @@
                 </a>
                 
                 <!-- Kingdom Wars -->
-                <a href="kingdom-wars.html" class="game-card rounded-xl overflow-hidden">
+                <a href="#kingdom-wars" class="game-card rounded-xl overflow-hidden">
                     <div class="relative">
-                        <img src="https://via.placeholder.com/400x225/1A1A2E/FFD23F?text=Kingdom+Wars" alt="Kingdom Wars" class="game-thumbnail w-full">
+                        <img src="https://cdn.onlinegames.io/games/kingdom-wars/thumb.jpg" alt="Kingdom Wars" class="game-thumbnail w-full">
                         <div class="absolute top-2 right-2 bg-yellow-500 text-gray-900 text-xs font-bold px-2 py-1 rounded">
                             Hot
                         </div>
@@ -402,20 +419,20 @@
     </section>
 
     <!-- Popular Games Section -->
-    <section class="py-16">
+    <section id="popular-games" class="py-16">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center mb-10">
                 <h2 class="text-3xl md:text-4xl font-bold hero-gradient">Popular This Week</h2>
-                <a href="popular.html" class="text-blue-400 hover:text-blue-300 flex items-center">
+                <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
                     View Popular <i class="ml-2 fas fa-arrow-right"></i>
                 </a>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Popular Game 1 -->
+                <!-- Zombie Apocalypse -->
                 <div class="bg-gray-900/50 rounded-xl overflow-hidden flex">
                     <div class="w-1/3">
-                        <img src="https://via.placeholder.com/150x150/1A1A2E/E94B7E?text=1" alt="Game" class="w-full h-full object-cover">
+                        <img src="https://cdn.onlinegames.io/games/zombie-apocalypse/thumb.jpg" alt="Zombie Apocalypse" class="w-full h-full object-cover">
                     </div>
                     <div class="w-2/3 p-4">
                         <div class="flex justify-between">
@@ -429,16 +446,16 @@
                         <div class="mt-3 flex">
                             <span class="bg-red-900/50 text-red-300 text-xs px-2 py-1 rounded">Action</span>
                         </div>
-                        <a href="zombie-apocalypse.html" class="mt-4 inline-block text-blue-400 hover:text-blue-300 text-sm">
+                        <a href="#zombie-apocalypse" class="mt-4 inline-block text-blue-400 hover:text-blue-300 text-sm">
                             Play Now <i class="ml-1 fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
                 
-                <!-- Popular Game 2 -->
+                <!-- Bubble Shooter Pro -->
                 <div class="bg-gray-900/50 rounded-xl overflow-hidden flex">
                     <div class="w-1/3">
-                        <img src="https://via.placeholder.com/150x150/1A1A2E/00A8E8?text=2" alt="Game" class="w-full h-full object-cover">
+                        <img src="https://cdn.onlinegames.io/games/bubble-shooter/thumb.jpg" alt="Bubble Shooter Pro" class="w-full h-full object-cover">
                     </div>
                     <div class="w-2/3 p-4">
                         <div class="flex justify-between">
@@ -452,16 +469,16 @@
                         <div class="mt-3 flex">
                             <span class="bg-blue-900/50 text-blue-300 text-xs px-2 py-1 rounded">Puzzle</span>
                         </div>
-                        <a href="bubble-shooter.html" class="mt-4 inline-block text-blue-400 hover:text-blue-300 text-sm">
+                        <a href="#bubble-shooter" class="mt-4 inline-block text-blue-400 hover:text-blue-300 text-sm">
                             Play Now <i class="ml-1 fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
                 
-                <!-- Popular Game 3 -->
+                <!-- Football Masters -->
                 <div class="bg-gray-900/50 rounded-xl overflow-hidden flex">
                     <div class="w-1/3">
-                        <img src="https://via.placeholder.com/150x150/1A1A2E/FF6B35?text=3" alt="Game" class="w-full h-full object-cover">
+                        <img src="https://cdn.onlinegames.io/games/football-masters/thumb.jpg" alt="Football Masters" class="w-full h-full object-cover">
                     </div>
                     <div class="w-2/3 p-4">
                         <div class="flex justify-between">
@@ -475,7 +492,7 @@
                         <div class="mt-3 flex">
                             <span class="bg-green-900/50 text-green-300 text-xs px-2 py-1 rounded">Sports</span>
                         </div>
-                        <a href="football-masters.html" class="mt-4 inline-block text-blue-400 hover:text-blue-300 text-sm">
+                        <a href="#football-masters" class="mt-4 inline-block text-blue-400 hover:text-blue-300 text-sm">
                             Play Now <i class="ml-1 fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -484,161 +501,142 @@
         </div>
     </section>
 
-    <!-- Community Section -->
-    <section class="py-16 bg-gradient-to-r from-purple-900/20 to-blue-900/20">
+    <!-- Embedded Games Section -->
+    <section class="py-16 bg-gradient-to-b from-gray-900/30 to-gray-900/70">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center hero-gradient">
-                Join Our Gaming Community
+                Play Games Directly in Browser
             </h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <!-- Leaderboards -->
-                <div class="bg-gray-900/50 rounded-xl p-6">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-full flex items-center justify-center mb-4 mx-auto">
-                            <i class="fas fa-trophy text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2 text-yellow-300">Leaderboards</h3>
-                        <p class="text-gray-400">Compete with players worldwide</p>
+            <!-- Monster Survivors -->
+            <div id="monster-survivors" class="mb-20">
+                <div class="flex flex-col md:flex-row gap-8 items-center mb-8">
+                    <div class="md:w-1/3">
+                        <img src="https://cdn.onlinegames.io/games/monster-survivors/thumb.jpg" alt="Monster Survivors" class="rounded-xl shadow-lg">
                     </div>
-                    
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between bg-gray-800/50 p-3 rounded-lg">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center text-gray-900 font-bold mr-3">1</div>
-                                <div>
-                                    <div class="font-medium">Player123</div>
-                                    <div class="text-xs text-gray-400">Monster Survivors</div>
-                                </div>
-                            </div>
-                            <div class="font-bold">1,245,780</div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-3xl font-bold mb-4 gradient-text monster-glow">Monster Survivors</h3>
+                        <p class="text-gray-300 mb-4">Survive endless waves of monsters in this heart-pounding action adventure. Only the strongest will prevail!</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-red-900/50 text-red-300 px-3 py-1 rounded-full">Action</span>
+                            <span class="bg-purple-900/50 text-purple-300 px-3 py-1 rounded-full">Survival</span>
+                            <span class="bg-blue-900/50 text-blue-300 px-3 py-1 rounded-full">Adventure</span>
                         </div>
-                        
-                        <div class="flex items-center justify-between bg-gray-800/50 p-3 rounded-lg">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8 rounded-full bg-gray-600 flex items-center justify-center text-gray-300 font-bold mr-3">2</div>
-                                <div>
-                                    <div class="font-medium">GameMaster</div>
-                                    <div class="text-xs text-gray-400">Puzzle Quest</div>
-                                </div>
+                        <div class="flex items-center">
+                            <div class="rating-stars mr-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
                             </div>
-                            <div class="font-bold">1,120,450</div>
-                        </div>
-                        
-                        <div class="flex items-center justify-between bg-gray-800/50 p-3 rounded-lg">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8 rounded-full bg-yellow-700 flex items-center justify-center text-gray-300 font-bold mr-3">3</div>
-                                <div>
-                                    <div class="font-medium">StrategyKing</div>
-                                    <div class="text-xs text-gray-400">Kingdom Wars</div>
-                                </div>
-                            </div>
-                            <div class="font-bold">987,650</div>
+                            <span class="text-gray-400">4.8 (2,456 reviews)</span>
                         </div>
                     </div>
-                    
-                    <a href="leaderboards.html" class="mt-6 inline-block w-full text-center bg-gray-800 hover:bg-gray-700 py-2 rounded-lg transition">
-                        View Full Leaderboard
-                    </a>
                 </div>
                 
-                <!-- Latest Comments -->
-                <div class="bg-gray-900/50 rounded-xl p-6">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center mb-4 mx-auto">
-                            <i class="fas fa-comments text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2 text-blue-300">Latest Comments</h3>
-                        <p class="text-gray-400">What players are saying</p>
+                <div class="game-container max-w-6xl mx-auto rounded-2xl overflow-hidden p-2">
+                    <iframe 
+                        src="https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html"
+                        width="100%"
+                        height="600"
+                        frameborder="0"
+                        allowfullscreen
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                        sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-popups-to-escape-sandbox"
+                        class="w-full rounded-xl"
+                        title="Monster Survivors - Play Online"
+                        loading="lazy"
+                    >
+                    </iframe>
+                </div>
+            </div>
+            
+            <!-- Puzzle Quest -->
+            <div id="puzzle-quest" class="mb-20">
+                <div class="flex flex-col md:flex-row gap-8 items-center mb-8">
+                    <div class="md:w-1/3">
+                        <img src="https://cdn.onlinegames.io/games/puzzle-quest/thumb.jpg" alt="Puzzle Quest" class="rounded-xl shadow-lg">
                     </div>
-                    
-                    <div class="space-y-4">
-                        <div class="bg-gray-800/50 p-4 rounded-lg">
-                            <div class="flex items-center mb-2">
-                                <img src="https://via.placeholder.com/40x40/1A1A2E/00A8E8?text=U1" alt="User" class="w-8 h-8 rounded-full mr-3">
-                                <div>
-                                    <div class="font-medium">GamerPro42</div>
-                                    <div class="text-xs text-gray-400">on Monster Survivors</div>
-                                </div>
-                            </div>
-                            <p class="text-gray-300">"The new update is amazing! The boss battles are so intense!"</p>
-                            <div class="mt-2 text-xs text-gray-400 flex items-center">
-                                <i class="fas fa-clock mr-1"></i> 2 hours ago
-                            </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-3xl font-bold mb-4 gradient-text">Puzzle Quest</h3>
+                        <p class="text-gray-300 mb-4">Embark on a magical journey solving challenging puzzles and uncovering ancient secrets in this captivating adventure.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-900/50 text-blue-300 px-3 py-1 rounded-full">Puzzle</span>
+                            <span class="bg-yellow-900/50 text-yellow-300 px-3 py-1 rounded-full">Adventure</span>
+                            <span class="bg-indigo-900/50 text-indigo-300 px-3 py-1 rounded-full">Brain Teaser</span>
                         </div>
-                        
-                        <div class="bg-gray-800/50 p-4 rounded-lg">
-                            <div class="flex items-center mb-2">
-                                <img src="https://via.placeholder.com/40x40/1A1A2E/7B2CBF?text=U2" alt="User" class="w-8 h-8 rounded-full mr-3">
-                                <div>
-                                    <div class="font-medium">PuzzleQueen</div>
-                                    <div class="text-xs text-gray-400">on Puzzle Quest</div>
-                                </div>
+                        <div class="flex items-center">
+                            <div class="rating-stars mr-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
                             </div>
-                            <p class="text-gray-300">"Level 45 is driving me crazy! Any tips?"</p>
-                            <div class="mt-2 text-xs text-gray-400 flex items-center">
-                                <i class="fas fa-clock mr-1"></i> 5 hours ago
-                            </div>
+                            <span class="text-gray-400">4.6 (1,892 reviews)</span>
                         </div>
                     </div>
-                    
-                    <a href="community.html" class="mt-6 inline-block w-full text-center bg-gray-800 hover:bg-gray-700 py-2 rounded-lg transition">
-                        Join the Discussion
-                    </a>
                 </div>
                 
-                <!-- Social -->
-                <div class="bg-gray-900/50 rounded-xl p-6">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-700 rounded-full flex items-center justify-center mb-4 mx-auto">
-                            <i class="fas fa-share-alt text-2xl"></i>
+                <div class="game-container max-w-6xl mx-auto rounded-2xl overflow-hidden p-2">
+                    <iframe 
+                        src="https://cloud.onlinegames.io/games/2025/unity/puzzle-quest/index-og.html"
+                        width="100%"
+                        height="600"
+                        frameborder="0"
+                        allowfullscreen
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                        sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-popups-to-escape-sandbox"
+                        class="w-full rounded-xl"
+                        title="Puzzle Quest - Play Online"
+                        loading="lazy"
+                    >
+                    </iframe>
+                </div>
+            </div>
+            
+            <!-- Space Racer -->
+            <div id="space-racer">
+                <div class="flex flex-col md:flex-row gap-8 items-center mb-8">
+                    <div class="md:w-1/3">
+                        <img src="https://cdn.onlinegames.io/games/space-racer/thumb.jpg" alt="Space Racer" class="rounded-xl shadow-lg">
+                    </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-3xl font-bold mb-4 gradient-text">Space Racer</h3>
+                        <p class="text-gray-300 mb-4">Race through cosmic tracks at breakneck speeds in futuristic vehicles. Outpace your opponents in zero-gravity environments!</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-red-900/50 text-red-300 px-3 py-1 rounded-full">Racing</span>
+                            <span class="bg-indigo-900/50 text-indigo-300 px-3 py-1 rounded-full">Sci-Fi</span>
+                            <span class="bg-purple-900/50 text-purple-300 px-3 py-1 rounded-full">Multiplayer</span>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2 text-pink-300">Connect With Us</h3>
-                        <p class="text-gray-400">Follow for updates and events</p>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <a href="#" class="flex items-center bg-gray-800/50 hover:bg-gray-700 p-4 rounded-lg transition">
-                            <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mr-4">
-                                <i class="fab fa-facebook-f"></i>
+                        <div class="flex items-center">
+                            <div class="rating-stars mr-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
                             </div>
-                            <div>
-                                <div class="font-medium">Facebook</div>
-                                <div class="text-xs text-gray-400">Join 25K+ followers</div>
-                            </div>
-                        </a>
-                        
-                        <a href="#" class="flex items-center bg-gray-800/50 hover:bg-gray-700 p-4 rounded-lg transition">
-                            <div class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center mr-4">
-                                <i class="fab fa-discord"></i>
-                            </div>
-                            <div>
-                                <div class="font-medium">Discord</div>
-                                <div class="text-xs text-gray-400">Chat with the community</div>
-                            </div>
-                        </a>
-                        
-                        <a href="#" class="flex items-center bg-gray-800/50 hover:bg-gray-700 p-4 rounded-lg transition">
-                            <div class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center mr-4">
-                                <i class="fab fa-twitter"></i>
-                            </div>
-                            <div>
-                                <div class="font-medium">Twitter</div>
-                                <div class="text-xs text-gray-400">Latest news and updates</div>
-                            </div>
-                        </a>
-                    </div>
-                    
-                    <div class="mt-8">
-                        <h4 class="font-semibold mb-3">Newsletter</h4>
-                        <p class="text-gray-400 text-sm mb-4">Get updates on new games and features</p>
-                        <div class="flex">
-                            <input type="email" placeholder="Your email" class="bg-gray-800 rounded-l-lg px-4 py-2 w-full focus:outline-none">
-                            <button class="bg-blue-600 hover:bg-blue-700 px-4 rounded-r-lg transition">
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
+                            <span class="text-gray-400">4.5 (1,734 reviews)</span>
                         </div>
                     </div>
+                </div>
+                
+                <div class="game-container max-w-6xl mx-auto rounded-2xl overflow-hidden p-2">
+                    <iframe 
+                        src="https://cloud.onlinegames.io/games/2025/unity/space-racer/index-og.html"
+                        width="100%"
+                        height="600"
+                        frameborder="0"
+                        allowfullscreen
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                        sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-popups-to-escape-sandbox"
+                        class="w-full rounded-xl"
+                        title="Space Racer - Play Online"
+                        loading="lazy"
+                    >
+                    </iframe>
                 </div>
             </div>
         </div>
@@ -649,7 +647,7 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <div class="text-2xl font-bold gradient-text mb-4">Decompression Games</div>
+                    <div class="text-2xl font-bold gradient-text mb-4">GameHub</div>
                     <p class="text-gray-400 mb-4">
                         Your destination for free online games. Play instantly in your browser with no downloads required.
                     </p>
@@ -672,39 +670,39 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
-                        <li><a href="all-games.html" class="text-gray-400 hover:text-white transition">All Games</a></li>
-                        <li><a href="new.html" class="text-gray-400 hover:text-white transition">New Games</a></li>
-                        <li><a href="popular.html" class="text-gray-400 hover:text-white transition">Popular Games</a></li>
-                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">All Games</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">New Games</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Popular Games</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Game Categories</h3>
                     <ul class="space-y-2">
-                        <li><a href="action.html" class="text-gray-400 hover:text-white transition">Action Games</a></li>
-                        <li><a href="puzzle.html" class="text-gray-400 hover:text-white transition">Puzzle Games</a></li>
-                        <li><a href="strategy.html" class="text-gray-400 hover:text-white transition">Strategy Games</a></li>
-                        <li><a href="sports.html" class="text-gray-400 hover:text-white transition">Sports Games</a></li>
-                        <li><a href="multiplayer.html" class="text-gray-400 hover:text-white transition">Multiplayer Games</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Action Games</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Puzzle Games</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Strategy Games</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Sports Games</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Multiplayer Games</a></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Support</h3>
                     <ul class="space-y-2">
-                        <li><a href="faq.html" class="text-gray-400 hover:text-white transition">FAQ</a></li>
-                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
-                        <li><a href="privacy.html" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
-                        <li><a href="terms.html" class="text-gray-400 hover:text-white transition">Terms of Service</a></li>
-                        <li><a href="report.html" class="text-gray-400 hover:text-white transition">Report a Problem</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Report a Problem</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
-                <p>&copy; 2025 Decompression Games. All rights reserved.</p>
+                <p>&copy; 2025 GameHub. All rights reserved.</p>
                 <p class="mt-2">Play free online games in your browser - no downloads required!</p>
             </div>
         </div>
@@ -716,19 +714,37 @@
             const searchTerm = this.value.toLowerCase();
             const results = document.querySelectorAll('.search-results a');
             
-            results.forEach(result => {
-                const text = result.textContent.toLowerCase();
-                if (text.includes(searchTerm)) {
-                    result.style.display = 'block';
-                } else {
-                    result.style.display = 'none';
+            if (searchTerm.length > 0) {
+                results.forEach(result => {
+                    const text = result.textContent.toLowerCase();
+                    if (text.includes(searchTerm)) {
+                        result.style.display = 'block';
+                    } else {
+                        result.style.display = 'none';
+                    }
+                });
+            } else {
+                results.forEach(result => result.style.display = 'block');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
         
-        // Mobile menu toggle (placeholder)
+        // Mobile menu toggle
         document.querySelector('button').addEventListener('click', function() {
-            alert('Mobile menu would open here');
+            alert('Mobile navigation menu would open here');
         });
     </script>
 </body>
